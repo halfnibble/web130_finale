@@ -65,15 +65,15 @@ permissions:
   - operation: User.delete
     authenticated: true
   # Post
-  # - operation: Post.read
-  # - operation: Post.create
-  #   authenticated: true
-  # - operation: Post.update
-  #   authenticated: true
-  # - operation: Post.delete
-  #   authenticated: true
-  # - operation: UserPosts.*
-  #   authenticated: true
+  - operation: Post.read
+  - operation: Post.create
+    authenticated: true
+  - operation: Post.update
+    authenticated: true
+  - operation: Post.delete
+    authenticated: true
+  - operation: UserPosts.*
+    authenticated: true
 
 
 # Your root tokens used for functions to get full access to the API
