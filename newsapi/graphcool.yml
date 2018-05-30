@@ -53,7 +53,27 @@ functions:
 # Read more here:
 # https://www.graph.cool/docs/reference/auth/authorization/overview-iegoo0heez
 permissions:
-  - operation: "*"
+  # User
+  - operation: User.read
+    authenticated: true
+  - operation: User.create
+  - operation: User.update
+    authenticated: true
+    fields:
+      - name
+      - email
+  - operation: User.delete
+    authenticated: true
+  # Post
+  # - operation: Post.read
+  # - operation: Post.create
+  #   authenticated: true
+  # - operation: Post.update
+  #   authenticated: true
+  # - operation: Post.delete
+  #   authenticated: true
+  # - operation: UserPosts.*
+  #   authenticated: true
 
 
 # Your root tokens used for functions to get full access to the API
