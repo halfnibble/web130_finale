@@ -78,6 +78,7 @@ module.exports = (grunt) => {
                 tasks: ['dev_js'],
                 files: [
                     'js/*.js',
+                    'js/**/*.js',
                     '!js/build/*.js'
                 ]
             },
