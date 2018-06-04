@@ -1,21 +1,86 @@
 <!doctype html>
 <html lang="en">
 <head>
+    
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="node_modules/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modues/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css" type="text/css" />
 
-    <title>Hello, world!</title>
+    <title>Seattle Cental News Hub</title>
 </head>
+
 <body>
+    <!-- Add styled header here. -->
+  
+  <header><h1>Seattle Central News Hub</h1></header>
+  <div id="date-weather">
+    Sunday, June 3rd, 2018
+    <img src="img/sunny.gif"> 59&#8457;</img>
+    </div>
     
     <!-- Add nav bar here. -->
+
+    <ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Latest News</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">OtherLinks</a>
+  </li>
+</ul>
+      <!-- end nav bar. -->
+      
+    
+      <!-- Add article styling here here. -->
+      
+      
+    <main class="container">
+        <section class="row">
+            <div class="col-md-8">
+                <h1 class="headline">Mariners Win!</h1>
+                <div id="article-1">
+                    <h2 class="recent"></h2>
+                    <article>This is article one, lorem lorem</article>
+                </div>
+            </div>
+            <div class="col-md-4">
+                 <h1 class="headline">Best News Ever in the world</h1>
+                <div id="article-2">
+                    <h2 class="content"></h2>
+                    <article>Article 2</article>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-md-4">
+                 <h1 class="headline">Mariners Tie!</h1>
+                <div id="article-3">
+                    <h2 class="content"></h2>
+                    <article>Article 3</article>
+                </div>
+            </div>
+            <div class="col-md-4">
+                 <h1 class="headline">Mariners Lose!</h1>
+                <div id="article-4">
+                    <h2 class="content"></h2>
+                    <article>Article 4</article>
+                </div>
+        </section>
+    </main>
     
     <main class="container">
         <div class="row">
             <div class="col-sm-12" id='main-content'>
-                <h1>Howdy world!</h1>
+                <h1>Howdy world!  text is replaced by js</h1>
             </div>
         </div>
     </main>
