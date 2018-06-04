@@ -6452,10 +6452,11 @@ a.text-dark:hover, a.text-dark:focus {
 
 h1 {
   text-align: center;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 h2 {
   font-family: serif;
-  text-decoration: underline;
-  background-color: #E38833;
+  text-decoration: underline; }
+
+#date-weather {
   text-align: center; }
