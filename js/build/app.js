@@ -10599,8 +10599,8 @@ $(document).ready(function () {
                     Authorization: 'Bearer ' + Cookies.get('token')
                 },
                 success: function success(response) {
-                    var article = response.data;
-                    console.log(article);
+                    var article = response.data.createArticle;
+                    window.location = 'article_detail.html#' + article.id;
                 },
                 contentType: 'application/json'
             });
@@ -10634,9 +10634,10 @@ $(document).ready(function () {
                     if (user === null) {
                         alert('Login failed! Try again.');
                     } else {
-                        console.log(user);
                         Cookies.set('authorId', user.id, { expires: 7 });
                         Cookies.set('token', user.token, { expires: 7 });
+                        // Redirect 
+                        window.location = 'article_form.html';
                     }
                 },
                 contentType: 'application/json'

@@ -30,9 +30,10 @@ $(document).ready(function() {
                     if (user === null) {
                         alert('Login failed! Try again.');
                     } else {
-                        console.log(user);
                         Cookies.set('authorId', user.id, { expires: 7 });
                         Cookies.set('token', user.token, { expires: 7 });
+                        // Redirect 
+                        window.location = 'article_form.html';
                     }
                 },
                 contentType: 'application/json'

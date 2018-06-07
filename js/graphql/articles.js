@@ -62,8 +62,8 @@ $(document).ready(function() {
                     Authorization: 'Bearer ' + Cookies.get('token')
                 },
                 success: (response) => {
-                    let article = response.data;
-                    console.log(article);
+                    let article = response.data.createArticle;
+                    window.location = 'article_detail.html#' + article.id; 
                 },
                 contentType: 'application/json'
             }); 
