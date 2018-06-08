@@ -1,6 +1,8 @@
 /* global $ JS_PAGE Cookies */
 
-var getAllArticles = '\n    query AllArticles {\n      allArticles {\n        id,\n        title,\n        content\n      }\n    }\n';
+var getAllArticles = '\n    query AllArticles {\n        allArticles {\n            id,\n            title,\n            content\n        }\n    }\n';
+
+var getArticle = '\n    query GetArticle($id: ID) {\n        Article(id: $id) {\n            title,\n            content\n        }\n    }\n';
 
 var CreateArticle = '\n    mutation CreateArticle($authorId: ID!, $title: String!, $content: String) {\n        createArticle(authorId: $authorId, title: $title, content: $content) {\n            id,\n            title\n        }\n    }\n';
 
@@ -23,7 +25,7 @@ $(document).ready(function () {
                     for (var _iterator = articles[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                         var article = _step.value;
 
-                        html += '<h2>' + article.title + '</h2>\n                             <p>' + article.content + '</p>';
+                        html += '\n                        <h2>\n                            <a href="article_detail.html#' + article.id + '">\n                                ' + article.title + '\n                            </a>\n                        </h2>\n                        <p>' + article.content + '</p>\n                    ';
                     }
                 } catch (err) {
                     _didIteratorError = true;
@@ -41,6 +43,27 @@ $(document).ready(function () {
                 }
 
                 $('#main-content').html(html);
+            },
+            contentType: 'application/json'
+        });
+    }
+
+    // Detail View
+    if (typeof JS_PAGE !== 'undefined' && JS_PAGE == 'detail_view') {
+        var article_id = window.location.hash.substring(1);
+        console.log('Article id is? ' + article_id);
+        $.post({
+            url: 'https://api.graph.cool/simple/v1/cjhjspp3l43x40186ohece9if',
+            data: JSON.stringify({
+                query: getArticle,
+                variables: {
+                    id: article_id
+                }
+            }),
+            success: function success(response) {
+                var article = response.data.Article;
+                $('#article-title').html(article.title);
+                $('#article-content').html(article.content);
             },
             contentType: 'application/json'
         });
