@@ -6452,11 +6452,21 @@ a.text-dark:hover, a.text-dark:focus {
 
 h1 {
   text-align: center;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: 'UnifrakturMaguntia', cursive; }
 
 h2 {
-  font-family: serif;
+  font-family: "Times New Roman", Times, serif;
   text-decoration: underline; }
+
+h3 {
+  text-align: center; }
+
+body {
+  background-color: #cefaf6; }
 
 #date-weather {
   text-align: center; }
+
+#main-content {
+  font-family: cursive;
+  font-style: normal; }
