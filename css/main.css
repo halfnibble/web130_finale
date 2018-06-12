@@ -6467,6 +6467,9 @@ h3 {
 nav {
   background-color: orange; }
 
+nav li a {
+  color: green; }
+
 #date-weather {
   text-align: center; }
 
