@@ -6461,8 +6461,11 @@ h2 {
 h3 {
   text-align: center; }
 
-body {
+#container {
   background-color: #cefaf6; }
+
+nav {
+  background-color: orange; }
 
 #date-weather {
   text-align: center; }
@@ -6470,3 +6473,6 @@ body {
 #main-content {
   font-family: cursive;
   font-style: normal; }
+
+#container-fluid {
+  background-color: #000000; }
