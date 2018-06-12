@@ -15,8 +15,9 @@ $(document).ready(function () {
                 query: getAllArticles
             }),
             success: function success(response) {
-                var articles = response.data.allArticles;
-                var html = '';
+                var articles = response.data.allArticles.reverse();
+                var html = '<div class="row">',
+                    counter = 1;
                 var _iteratorNormalCompletion = true;
                 var _didIteratorError = false;
                 var _iteratorError = undefined;
@@ -25,7 +26,17 @@ $(document).ready(function () {
                     for (var _iterator = articles[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                         var article = _step.value;
 
-                        html += '\n                        <h2>\n                            <a href="article_detail.html#' + article.id + '">\n                                ' + article.title + '\n                            </a>\n                        </h2>\n                        <p>' + article.content + '</p>\n                    ';
+                        if (counter == 1) {
+                            html += '\n                            <div class="col-md-8">\n                                <h2>\n                                    <a href="article_detail.html#' + article.id + '">\n                                        ' + article.title + '\n                                    </a>\n                                </h2>\n                                <p>' + article.content + '</p>\n                            </div>\n                        ';
+                        } else if (counter == 2) {
+                            html += '\n                            <div class="col-md-4">\n                                <h2>\n                                    <a href="article_detail.html#' + article.id + '">\n                                        ' + article.title + '\n                                    </a>\n                                </h2>\n                                <p>' + article.content + '</p>\n                            </div>\n                        ';
+                        } else {
+                            html += '\n                            <div class="col-md-6">\n                                <h2>\n                                    <a href="article_detail.html#' + article.id + '">\n                                        ' + article.title + '\n                                    </a>\n                                </h2>\n                                <p>' + article.content + '</p>\n                            </div>\n                        ';
+                        }
+                        if (counter % 2 == 0) {
+                            html += '</div><div class="row">';
+                        }
+                        counter++;
                     }
                 } catch (err) {
                     _didIteratorError = true;
@@ -42,6 +53,7 @@ $(document).ready(function () {
                     }
                 }
 
+                html += '</div>';
                 $('#main-content').html(html);
             },
             contentType: 'application/json'
@@ -137,3 +149,5 @@ $(document).ready(function () {
         });
     }
 });
+
+// import DarkSkyApi from '../node_modules/dark-sky-api/src/dark-sky-api';

@@ -37,18 +37,50 @@ $(document).ready(function() {
                 query: getAllArticles
             }),
             success: (response) => {
-                let articles = response.data.allArticles;
-                let html = '';
+                let articles = response.data.allArticles.reverse();
+                let html = '<div class="row">',
+                    counter = 1;
                 for (let article of articles) {
-                    html += `
-                        <h2>
-                            <a href="article_detail.html#${article.id}">
-                                ${article.title}
-                            </a>
-                        </h2>
-                        <p>${article.content}</p>
-                    `;
+                    if (counter == 1) {
+                        html += `
+                            <div class="col-md-8">
+                                <h2>
+                                    <a href="article_detail.html#${article.id}">
+                                        ${article.title}
+                                    </a>
+                                </h2>
+                                <p>${article.content}</p>
+                            </div>
+                        `;
+                    } else if (counter == 2) {
+                        html += `
+                            <div class="col-md-4">
+                                <h2>
+                                    <a href="article_detail.html#${article.id}">
+                                        ${article.title}
+                                    </a>
+                                </h2>
+                                <p>${article.content}</p>
+                            </div>
+                        `;
+                    } else {
+                        html += `
+                            <div class="col-md-6">
+                                <h2>
+                                    <a href="article_detail.html#${article.id}">
+                                        ${article.title}
+                                    </a>
+                                </h2>
+                                <p>${article.content}</p>
+                            </div>
+                        `;
+                    }
+                    if (counter % 2 == 0) {
+                        html += '</div><div class="row">';
+                    }
+                    counter++;
                 }
+                html += '</div>';
                 $('#main-content').html(html);
             },
             contentType: 'application/json'
