@@ -15,5 +15,8 @@ type Article @model {
   id: ID! @isUnique
   title: String!
   content: String
+  category: String
+  createdAt: DateTime! # read-only (managed by Graphcool)
+  updatedAt: DateTime! # read-only (managed by Graphcool)
   author: User! @relation(name: "UserArticles")
 }

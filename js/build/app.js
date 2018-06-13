@@ -10531,9 +10531,9 @@ return jQuery;
 
 /* global $ JS_PAGE Cookies */
 
-var getAllArticles = '\n    query AllArticles {\n        allArticles {\n            id,\n            title,\n            content\n        }\n    }\n';
+var getAllArticles = '\n    query AllArticles {\n        allArticles {\n            id,\n            title,\n            createdAt,\n            updatedAt,\n            content\n        }\n    }\n';
 
-var getArticle = '\n    query GetArticle($id: ID) {\n        Article(id: $id) {\n            title,\n            content\n        }\n    }\n';
+var getArticle = '\n    query GetArticle($id: ID) {\n        Article(id: $id) {\n            title,\n            createdAt,\n            updatedAt,\n            content\n        }\n    }\n';
 
 var CreateArticle = '\n    mutation CreateArticle($authorId: ID!, $title: String!, $content: String) {\n        createArticle(authorId: $authorId, title: $title, content: $content) {\n            id,\n            title\n        }\n    }\n';
 

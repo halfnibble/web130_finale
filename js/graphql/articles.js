@@ -5,6 +5,8 @@ let getAllArticles = `
         allArticles {
             id,
             title,
+            createdAt,
+            updatedAt,
             content
         }
     }
@@ -14,6 +16,8 @@ let getArticle = `
     query GetArticle($id: ID) {
         Article(id: $id) {
             title,
+            createdAt,
+            updatedAt,
             content
         }
     }
