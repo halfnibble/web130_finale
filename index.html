@@ -14,38 +14,44 @@
 
 <body>
     <!-- Add styled header here. -->
-  
-  <header><h1>Seattle Central Ministry of Propaganda Forum</h1></header>
-  <div id="date-weather">
-    Stardate: 22348.44 -- Galactic Quadrant: Gamma
-    <img src="img/sunny.gif"> 59&#8457;</img>
+    <header>
+        <h1>Seattle Central Ministry of Propaganda Forum</h1>
+    </header>
+    <div id="date-weather">
+        Stardate: 22348.44 -- Galactic Quadrant: Gamma
+        <img src="img/sunny.gif"> 59&#8457;</img>
     </div>
     
     <!-- Add nav bar here. -->
     
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                 <a class="navbar-brand" href="#">SSC Newsfeed</a>
+    <nav class="navbar navbar-expand-md navbar-default">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SSC Newsfeed</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="article_form.html">Submit Article</a>
+                    </li>
+                </ul>
             </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="login.html">Login</a></li>
-            <li><a href="article_form.html">Submit Article</a></li>
-        </ul>
         </div>
     </nav>
 
     <!-- end nav bar. -->
       
     
-    <!-- Add article styling here here. -->
+    <!-- Add articles populate here. -->
       
-     
-    
     <main class="container">
         <div class="row">
             <div class="col-sm-12" id='main-content'>
-                <h1>Howdy world!  text here is replaced by js</h1>
+                <h1>Loading...</h1>
             </div>
         </div>
     </main>
@@ -54,5 +60,8 @@
         var JS_PAGE = 'list_view';
     </script>
     <script type="text/javascript" src="js/build/app.js"></script>
+    <!-- Something is wrong. I shouldn't need this. -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    
 </body>
 </html>
