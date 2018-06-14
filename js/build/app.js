@@ -10679,6 +10679,11 @@ $(document).ready(function () {
             });
         });
     }
+
+    if (typeof JS_PAGE !== 'undefined' && JS_PAGE == 'logout_view') {
+        Cookies.remove('authorId');
+        Cookies.remove('token');
+    }
 });
 
 var classCallCheck = function (instance, Constructor) {
@@ -11177,6 +11182,13 @@ Ee.Utils = ('undefined' == typeof window ? global : window).PopperUtils, Ee.plac
 
 /* global $ JS_PAGE Cookies */
 
-
+$(document).ready(function () {
+    var authorId = Cookies.get('authorId');
+    if (typeof authorId !== 'undefined') {
+        $('#login-logout').attr('href', 'logout.html').html('Logout');
+    } else {
+        $('#submit-article-link').attr('href', 'login.html');
+    }
+});
 
 // import DarkSkyApi from '../node_modules/dark-sky-api/src/dark-sky-api';

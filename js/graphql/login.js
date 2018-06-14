@@ -40,4 +40,9 @@ $(document).ready(function() {
             });
         });
     }
+    
+    if (typeof JS_PAGE !== 'undefined' && JS_PAGE == 'logout_view') {
+        Cookies.remove('authorId');
+        Cookies.remove('token');
+    }
 });
